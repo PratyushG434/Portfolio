@@ -8,11 +8,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
   
     <script type="module">
-        import { createIcons, ArrowRight, Briefcase, Code, User, GraduationCap, Mail, Phone, Github, Linkedin, Zap } from 'https://cdn.skypack.dev/lucide@latest';
-        createIcons({ icons: { ArrowRight, Briefcase, Code, User, GraduationCap, Mail, Phone, Github, Linkedin, Zap } });
+        import { createIcons, ArrowRight, Briefcase, Code, User, GraduationCap, Mail, Phone, Github, Linkedin, Zap, Database } from 'https://cdn.skypack.dev/lucide@latest';
+        createIcons({ icons: { ArrowRight, Briefcase, Code, User, GraduationCap, Mail, Phone, Github, Linkedin, Zap, Database } });
     </script>
     <style>
-        
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
@@ -23,29 +22,57 @@
         {
             padding: 5rem 1rem;
         }
+        
+        
         .text-gradient {
-            background-image: linear-gradient(to right, #6366f1, #3b82f6, #06b6d4);
+            background-image: linear-gradient(to right, #10b981, #93c48e, #d4ccc6); 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
+
+        .styled-card {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .styled-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.3), 0 8px 10px -6px rgba(16, 185, 129, 0.3); 
+            background-color: #27272a; 
+        }
+
+        .project-card:hover {
+             transform: translateY(-4px);
+            
+             box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.5), 0 5px 15px -3px rgba(245, 158, 11, 0.4); 
+             background-color: #27272a; 
+        }
+
         .project-card:hover .arrow-icon {
             transform: translateX(4px);
         }
+
+       
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+       
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200 antialiased">
 
-    <!-- Sticky Navigation -->
-    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800 shadow-lg">
+    <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-lg border-b border-gray-800 shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="#hero" class="text-xl font-bold text-gradient">Pratyush Gupta</a>
             <nav class="space-x-4 flex">
-                <a href="#about" class="text-gray-300 hover:text-indigo-400 transition duration-300 hidden sm:inline">About</a>
-                <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition duration-300 hidden sm:inline">Skills</a>
-                <a href="#projects" class="text-gray-300 hover:text-indigo-400 transition duration-300 hidden sm:inline">Projects</a>
-                <a href="#education" class="text-gray-300 hover:text-indigo-400 transition duration-300 hidden sm:inline">Education</a>
-                <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-1 px-3 rounded-full transition duration-300 text-sm">Contact</a>
+                <a href="#about" class="text-gray-300 hover:text-emerald-400 transition duration-300 hidden sm:inline">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-emerald-400 transition duration-300 hidden sm:inline">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-emerald-400 transition duration-300 hidden sm:inline">Projects</a>
+                <a href="#education" class="text-gray-300 hover:text-emerald-400 transition duration-300 hidden sm:inline">Education</a>
+                <a href="#contact" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-1 px-3 rounded-full transition duration-300 text-sm shadow-md shadow-emerald-600/30">Contact</a>
             </nav>
         </div>
     </header>
@@ -55,10 +82,10 @@
         <!-- 1. Hero Section -->
         <section id="hero" class="section-padding flex flex-col md:flex-row items-center md:justify-between text-center md:text-left">
             <div class="md:w-3/5 space-y-4">
-                <p class="text-lg text-indigo-400 font-medium">Hello, I'm</p>
+                <p class="text-lg text-emerald-400 font-medium tracking-widest uppercase">Hello, I'm</p>
                 <h1 class="text-6xl sm:text-7xl font-extrabold leading-tight">
                     <span class="text-white">Pratyush </span>
-                    <span class="text-gradient">Gupta</span>
+                    <span class="text-white">Gupta</span>
                 </h1>
                 <h2 class="text-2xl font-semibold text-gray-400">
                     B.Tech Computer Science and Engineering Student
@@ -67,17 +94,18 @@
                     Indian Institute Of Technology Indore (IIT Indore)
                 </h3>
                 <div class="pt-6 flex justify-center md:justify-start space-x-4">
-                    <a href="#projects" class="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-xl">
+                    <a href="#projects" class="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl transition duration-300 shadow-xl hover:shadow-emerald-500/50">
                         View Projects <i data-lucide="arrow-right" class="w-5 h-5 ml-1"></i>
                     </a>
-                    <a href="https://linkedin.com/in/pratyush-gupta-ba4102331/" target="_blank" class="flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 text-gray-300 font-bold py-3 px-6 rounded-lg transition duration-300">
+                    <a href="https://linkedin.com/in/pratyush-gupta-ba4102331/" target="_blank" class="flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 text-gray-300 font-bold py-3 px-6 rounded-xl transition duration-300">
                         <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
                     </a>
                 </div>
             </div>
+          
             <div class="mt-10 md:mt-0 md:w-2/5 flex justify-center">
          
-                <div class="overflow-hidden w-64 h-64 sm:w-80 sm:h-80 bg-gray-700 rounded-full flex items-center justify-center border-4 border-indigo-500 shadow-2xl">
+                <div class="overflow-hidden w-64 h-64 sm:w-80 sm:h-80 bg-gray-700 rounded-full flex items-center justify-center border-4 border-green-500 shadow-2xl">
                     <!-- <i data-lucide="user" class="w-20 h-20 text-indigo-400"></i> -->
                     <img src="./IMG20250622181525.jpg" alt="" class="w-full">
                 </div>
@@ -87,8 +115,10 @@
         <!-- 2. About Section -->
         <section id="about" class="section-padding border-t border-gray-800">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold mb-8 text-center"><i data-lucide="user" class="w-8 h-8 inline mr-2 text-indigo-400"></i> About Me</h2>
-                <div class="bg-gray-800 p-8 rounded-xl shadow-2xl space-y-4">
+                <h2 class="text-4xl font-bold mb-12 text-center section-header">
+                    <i data-lucide="user" class="w-8 h-8 inline mr-2 text-emerald-400"></i> About Me
+                </h2>
+                <div class="bg-gray-800 p-8 rounded-2xl shadow-2xl space-y-4 styled-card">
                     <p class="text-gray-300 leading-relaxed text-lg">
                         I am a dedicated B.Tech Computer Science and Engineering student at <strong>IIT Indore</strong> with a strong foundation in full-stack development and problem-solving.
                         My current academic performance, reflected by a <strong>9.21 CGPA</strong>, demonstrates my commitment to excellence.
@@ -98,8 +128,8 @@
                         efficient, and impactful solutions—from user-friendly ride-sharing platforms to performance-optimized data aggregation APIs.
                         I am constantly seeking opportunities to apply my technical skills and contribute to innovative projects.
                     </p>
-                    <div class="pt-4">
-                         <p class="text-sm font-semibold text-indigo-400">Key Achievements:</p>
+                    <div class="pt-4 border-t border-gray-700 mt-6">
+                         <p class="text-sm font-semibold text-emerald-400">Key Achievements:</p>
                          <p class="text-sm text-gray-400">JEE Advanced AIR 1108 | JEE Mains AIR 87 (2024)</p>
                     </div>
                 </div>
@@ -108,39 +138,40 @@
 
         <!-- 3. Skills Section -->
         <section id="skills" class="section-padding border-t border-gray-800 bg-gray-950">
-            <h2 class="text-4xl font-bold mb-12 text-center"><i data-lucide="code" class="w-8 h-8 inline mr-2 text-indigo-400"></i> Technical Skills</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center section-header">
+                <i data-lucide="code" class="w-8 h-8 inline mr-2 text-emerald-400"></i> Technical Skills
+            </h2>
 
             <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                <!-- Programming Languages -->
-                <div class="bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-indigo-500">
-                    <h3 class="text-2xl font-semibold mb-4 flex items-center text-indigo-300"><i data-lucide="zap" class="w-5 h-5 mr-2"></i> Programming</h3>
+                <div class="bg-gray-800 p-6 rounded-xl styled-card border-l-4 border-emerald-500">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center text-emerald-300"><i data-lucide="zap" class="w-5 h-5 mr-2"></i> Programming</h3>
                     <ul class="space-y-2 text-gray-300">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span> Python</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span> C++</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span> JavaScript</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span> Python</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span> C++</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span> JavaScript</li>
                     </ul>
                 </div>
 
-                <!-- Tools & Frameworks -->
-                <div class="bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-cyan-500">
-                    <h3 class="text-2xl font-semibold mb-4 flex items-center text-cyan-300"><i data-lucide="briefcase" class="w-5 h-5 mr-2"></i> Frameworks & Tools</h3>
+
+                <div class="bg-gray-800 p-6 rounded-xl styled-card border-l-4 border-amber-500">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center text-amber-300"><i data-lucide="briefcase" class="w-5 h-5 mr-2"></i> Frameworks & Tools</h3>
                     <ul class="space-y-2 text-gray-300">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full mr-3"></span> React.JS, HTML, CSS</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full mr-3"></span> NodeJS, ExpressJS</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full mr-3"></span> MaterialUI, Bootstrap</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full mr-3"></span> Git, Github</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full mr-3"></span> Pytorch*, Numpy*, Pandas*</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-3"></span> React.JS, HTML, CSS</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-3"></span> NodeJS, ExpressJS</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-3"></span> MaterialUI, Bootstrap</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-3"></span> Git, Github</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-amber-500 rounded-full mr-3"></span> Pytorch*, Numpy*, Pandas*</li>
                     </ul>
                     <p class="text-sm text-gray-500 pt-2">* Elementary proficiency</p>
                 </div>
 
-                <!-- Database -->
-                <div class="bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-teal-500">
-                    <h3 class="text-2xl font-semibold mb-4 flex items-center text-teal-300"><i data-lucide="database" class="w-5 h-5 mr-2"></i> Database & Cache</h3>
+             
+                <div class="bg-gray-800 p-6 rounded-xl styled-card border-l-4 border-orange-500">
+                    <h3 class="text-2xl font-semibold mb-4 flex items-center text-orange-300"><i data-lucide="database" class="w-5 h-5 mr-2"></i> Database & Cache</h3>
                     <ul class="space-y-2 text-gray-300">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-teal-500 rounded-full mr-3"></span> PostgreSQL</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-teal-500 rounded-full mr-3"></span> Redis (Caching)</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span> PostgreSQL</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span> Redis (Caching)</li>
                     </ul>
                 </div>
             </div>
@@ -148,13 +179,15 @@
 
         <!-- 4. Projects Section -->
         <section id="projects" class="section-padding border-t border-gray-800">
-            <h2 class="text-4xl font-bold mb-12 text-center"><i data-lucide="briefcase" class="w-8 h-8 inline mr-2 text-indigo-400"></i> Featured Projects</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center section-header">
+                <i data-lucide="briefcase" class="w-8 h-8 inline mr-2 text-emerald-400"></i> Featured Projects
+            </h2>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
-                <!-- Project 1: Carpool - Ride Sharing Web App -->
-                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-xl transition duration-500 ease-in-out hover:shadow-indigo-500/50 hover:bg-gray-700/70 border-l-4 border-indigo-500">
-                    <h3 class="text-2xl font-bold mb-2 text-indigo-300">Carpool - Ride Sharing Web App</h3>
+                <!-- Project 1: Carpool -->
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-xl transition duration-500 ease-in-out hover:shadow-emerald-500/50 hover:bg-gray-700/70 border-l-4 border-r-4 border-emerald-500">
+                    <h3 class="text-2xl font-bold mb-2 text-white-400">Carpool - Ride Sharing Web App</h3> 
                     <p class="text-sm font-medium text-gray-400 mb-4">React | NodeJS | ExpressJS | PostgreSQL | Google OAuth</p>
                     <p class="text-gray-300 mb-4">
                         Developed a feature-rich Web Application enabling users to share rides, significantly reducing travel costs and environmental pollution.
@@ -164,14 +197,14 @@
                         <li>Live notification badge for pending ride requests and smooth handling of request actions (send, withdraw, accept, decline).</li>
                         <li>Implemented a user Rating System based on ride experience.</li>
                     </ul>
-                    <a href="https://github.com/PratyushG434/Carpool" target="_blank" class="text-indigo-400 font-semibold flex items-center hover:text-indigo-300 transition duration-300">
+                    <a href="https://github.com/PratyushG434/Carpool" target="_blank" class="text-emerald-400 font-semibold flex items-center hover:text-emerald-300 transition duration-300">
                         View Code on GitHub <i data-lucide="arrow-right" class="w-4 h-4 ml-2 arrow-icon transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- Project 2: BreezeCast - Weather Web Application -->
-                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-xl transition duration-500 ease-in-out hover:shadow-cyan-500/50 hover:bg-gray-700/70 border-l-4 border-cyan-500">
-                    <h3 class="text-2xl font-bold mb-2 text-cyan-300">BreezeCast - Weather Web Application</h3>
+                <!-- Project 2: BreezeCast -->
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-xl transition duration-500 ease-in-out hover:shadow-amber-500/50 hover:bg-gray-700/70 border-l-4 border-r-4 border-amber-500">
+                    <h3 class="text-2xl font-bold mb-2 text-white-400">BreezeCast - Weather Web Application</h3> 
                     <p class="text-sm font-medium text-gray-400 mb-4">HTML | CSS | JavaScript | NodeJS | OpenWeatherMap API</p>
                     <p class="text-gray-300 mb-4">
                         Created a responsive, user-friendly Web Application to fetch and display live weather conditions and a 5-day forecast for any specified location.
@@ -182,18 +215,18 @@
                         <li>Dynamic weather icons correspond accurately to current conditions.</li>
                     </ul>
                     <div class="flex space-x-4">
-                        <a href="" target="_blank" class="text-cyan-400 font-semibold flex items-center hover:text-cyan-300 transition duration-300">
+                        <a href="" target="_blank" class="text-amber-400 font-semibold flex items-center hover:text-amber-300 transition duration-300">
                             Live Demo <i data-lucide="arrow-right" class="w-4 h-4 ml-2 arrow-icon transition-transform"></i>
                         </a>
-                        <a href="https://github.com/PratyushG434/BreezeCast" target="_blank" class="text-cyan-400 font-semibold flex items-center hover:text-cyan-300 transition duration-300">
+                        <a href="https://github.com/PratyushG434/BreezeCast" target="_blank" class="text-amber-400 font-semibold flex items-center hover:text-amber-300 transition duration-300">
                             GitHub <i data-lucide="arrow-right" class="w-4 h-4 ml-2 arrow-icon transition-transform"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Project 3: Weather and News Aggregator API -->
-                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-xl transition duration-500 ease-in-out hover:shadow-teal-500/50 hover:bg-gray-700/70 border-l-4 border-teal-500 col-span-1 lg:col-span-2">
-                    <h3 class="text-2xl font-bold mb-2 text-teal-300">Weather and News Aggregator API</h3>
+               
+                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-xl transition duration-500 ease-in-out hover:shadow-orange-500/50 hover:bg-gray-700/70 border-l-4 border-r-4 border-orange-500 col-span-1 lg:col-span-2">
+                    <h3 class="text-2xl font-bold mb-2 text-white-400">Weather and News Aggregator API</h3> 
                     <p class="text-sm font-medium text-gray-400 mb-4">NodeJS | ExpressJS | PostgreSQL | Redis (Caching) | JWT Auth</p>
                     <p class="text-gray-300 mb-4">
                         Developed a high-performance backend API that aggregates the latest news and live weather information from multiple sources for a given location.
@@ -203,7 +236,7 @@
                         <li>Allows users to Save, Update, and Delete personalized preferences (Language, News Category, City).</li>
                         <li>Achieves fast responses for repeated requests using <strong>Redis Caching</strong>.</li>
                     </ul>
-                    <a href="https://github.com/PratyushG434/Weather-and-News-Aggregator-Api" target="_blank" class="text-teal-400 font-semibold flex items-center hover:text-teal-300 transition duration-300">
+                    <a href="https://github.com/PratyushG434/Weather-and-News-Aggregator-Api" target="_blank" class="text-orange-400 font-semibold flex items-center hover:text-orange-300 transition duration-300">
                         View Code on GitHub <i data-lucide="arrow-right" class="w-4 h-4 ml-2 arrow-icon transition-transform"></i>
                     </a>
                 </div>
@@ -212,44 +245,46 @@
 
         <!-- 5. Education Section -->
         <section id="education" class="section-padding border-t border-gray-800 bg-gray-950">
-            <h2 class="text-4xl font-bold mb-12 text-center"><i data-lucide="graduation-cap" class="w-8 h-8 inline mr-2 text-indigo-400"></i> Education</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center section-header">
+                <i data-lucide="graduation-cap" class="w-8 h-8 inline mr-2 text-emerald-400"></i> Education
+            </h2>
 
-            <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-8 max-w-4xl mx-auto">
 
                 <!-- IIT Indore -->
-                <div class="flex items-start bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                <div class="flex items-start bg-gray-800 p-6 rounded-2xl shadow-lg border-l-6 border-emerald-500 styled-card">
                     <div class="flex-shrink-0 pt-1">
-                        <i data-lucide="briefcase" class="w-6 h-6 text-indigo-400"></i>
+                        <i data-lucide="briefcase" class="w-6 h-6 text-emerald-400"></i>
                     </div>
                     <div class="ml-4 flex-grow">
                         <h3 class="text-2xl font-semibold text-white">B.Tech Computer Science and Engineering</h3>
-                        <p class="text-lg text-indigo-300">Indian Institute of Technology Indore (IIT Indore)</p>
-                        <p class="text-gray-400 mt-1">2024 - Present | <strong>CGPA: 9.21</strong> (Current)</p>
-                        <p class="text-sm text-gray-500 mt-2">Relevant Courses: Linear Algebra, Basic Calculus</p>
+                        <p class="text-lg text-emerald-300">Indian Institute of Technology Indore (IIT Indore)</p>
+                        <p class="text-gray-400 mt-1 font-medium">2024 - Present | <strong>CGPA: 9.21</strong> (Current)</p>
+                        <p class="text-sm text-gray-500 mt-2 border-t border-gray-700 pt-2">Relevant Courses: Linear Algebra, Basic Calculus</p>
                     </div>
                 </div>
 
-                <!-- Senior Secondary -->
-                <div class="flex items-start bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-cyan-500">
+                <!-- Senior Secondary-->
+                <div class="flex items-start bg-gray-800 p-6 rounded-2xl shadow-lg border-l-6 border-amber-500 styled-card">
                     <div class="flex-shrink-0 pt-1">
-                        <i data-lucide="graduation-cap" class="w-6 h-6 text-cyan-400"></i>
+                        <i data-lucide="graduation-cap" class="w-6 h-6 text-amber-400"></i>
                     </div>
                     <div class="ml-4 flex-grow">
                         <h3 class="text-2xl font-semibold text-white">Senior Secondary (CBSE Board)</h3>
-                        <p class="text-lg text-cyan-300">High School</p>
-                        <p class="text-gray-400 mt-1">2024 | <strong>Percentage: 95.2%</strong></p>
+                        <p class="text-lg text-amber-300">High School</p>
+                        <p class="text-gray-400 mt-1 font-medium">2024 | <strong>Percentage: 95.2%</strong></p>
                     </div>
                 </div>
 
-                <!-- Secondary -->
-                <div class="flex items-start bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-teal-500">
+                <!-- Secondary  -->
+                <div class="flex items-start bg-gray-800 p-6 rounded-2xl shadow-lg border-l-6 border-orange-500 styled-card">
                     <div class="flex-shrink-0 pt-1">
-                        <i data-lucide="graduation-cap" class="w-6 h-6 text-teal-400"></i>
+                        <i data-lucide="graduation-cap" class="w-6 h-6 text-orange-400"></i>
                     </div>
                     <div class="ml-4 flex-grow">
                         <h3 class="text-2xl font-semibold text-white">Secondary (ICSE Board)</h3>
-                        <p class="text-lg text-teal-300">High School</p>
-                        <p class="text-gray-400 mt-1">2022 | <strong>Percentage: 98.6%</strong></p>
+                        <p class="text-lg text-orange-300">High School</p>
+                        <p class="text-gray-400 mt-1 font-medium">2022 | <strong>Percentage: 98.6%</strong></p>
                     </div>
                 </div>
 
@@ -258,31 +293,33 @@
 
         <!-- 6. Contact Section & Footer -->
         <section id="contact" class="section-padding border-t border-gray-800">
-            <h2 class="text-4xl font-bold mb-12 text-center"><i data-lucide="mail" class="w-8 h-8 inline mr-2 text-indigo-400"></i> Get In Touch</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center section-header">
+                <i data-lucide="mail" class="w-8 h-8 inline mr-2 text-emerald-400"></i> Get In Touch
+            </h2>
 
-            <div class="max-w-xl mx-auto bg-gray-800 p-8 rounded-xl shadow-2xl space-y-6 text-center">
+            <div class="max-w-xl mx-auto bg-gray-800 p-8 rounded-2xl shadow-2xl styled-card space-y-6 text-center">
                 <p class="text-xl text-gray-300">I'm currently seeking new opportunities and collaborations. Feel free to reach out!</p>
 
-                <div class="space-y-3">
+                <div class="space-y-3 pt-4 border-t border-gray-700">
                     <div class="flex items-center justify-center space-x-3">
-                        <i data-lucide="mail" class="w-5 h-5 text-indigo-400"></i>
-                        <span class="text-gray-300">pratyush1534@gmail.com</span>
+                        <i data-lucide="mail" class="w-5 h-5 text-emerald-400"></i>
+                        <span class="text-gray-300 font-medium">pratyush1534@gmail.com</span>
                     </div>
                     <div class="flex items-center justify-center space-x-3">
-                        <i data-lucide="phone" class="w-5 h-5 text-indigo-400"></i>
-                        <span class="text-gray-300">+91-7985135023</span>
+                        <i data-lucide="phone" class="w-5 h-5 text-emerald-400"></i>
+                        <span class="text-gray-300 font-medium">+91-7985135023</span>
                     </div>
                 </div>
 
                 <div class="flex justify-center space-x-6 pt-4">
-                    <a href="https://linkedin.com/in/pratyush-gupta-ba4102331/" target="_blank" class="text-gray-400 hover:text-indigo-400 transition duration-300">
+                    <a href="https://linkedin.com/in/pratyush-gupta-ba4102331/" target="_blank" class="text-gray-400 hover:text-emerald-400 transition duration-300 transform hover:scale-110">
                         <i data-lucide="linkedin" class="w-8 h-8"></i>
                     </a>
-                    <a href="mailto:pratyush1534@gmail.com" class="text-gray-400 hover:text-indigo-400 transition duration-300">
+                    <a href="mailto:pratyush1534@gmail.com" class="text-gray-400 hover:text-emerald-400 transition duration-300 transform hover:scale-110">
                         <i data-lucide="mail" class="w-8 h-8"></i>
                     </a>
        
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-indigo-400 transition duration-300">
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-emerald-400 transition duration-300 transform hover:scale-110">
                         <i data-lucide="github" class="w-8 h-8"></i>
                     </a>
                 </div>
@@ -293,7 +330,7 @@
 
     <footer class="bg-gray-950 border-t border-gray-800 mt-12 py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
-            &copy; 2025 Pratyush Gupta. Built with Tailwind CSS.
+            &copy; 2025 Pratyush Gupta.
         </div>
     </footer>
 
